@@ -16,6 +16,14 @@
             crossorigin="anonymous"
         ></script>
         <!-- Font awesome linking end -->
+
+        <!-- Styles start -->
+        <style>
+            .text-semiblack {
+                color: #00000080;
+            }
+        </style>
+        <!-- Styles end -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Forum-TS</title>
@@ -24,7 +32,7 @@
         <!-- Header section start -->
         <section>
             <header
-                class="w-[90%] md:container lg:container m-auto py-5 flex flex-col md:flex-row lg:flex-row justify-between items-center gap-4"
+                class="w-[95%] md:container lg:container m-auto py-5 flex flex-col md:flex-row lg:flex-row justify-between items-center gap-4"
             >
                 <h1 class="text-4xl font-extrabold">
                     Forum<span class="text-[#797dfc]">-TS</span>
@@ -57,6 +65,83 @@
                     >
                 </div>
             </header>
+
+            <!-- Banner section start -->
+            <section
+                class="bg-[#12142d] w-[95%] md:container lg:container m-auto rounded-[50px]"
+            >
+                <div
+                    class="rounded-xl flex items-center"
+                    style="
+                        background-image: url('images/banner.png');
+                        background-size: cover;
+                        height: 80vh;
+                        width: 100%;
+                    "
+                >
+                    <div
+                        class="flex flex-col gap-20 md:flex-row lg:flex-row items-center w-full justify-evenly p-2"
+                    >
+                        <div class="text-center md:text-left lg:text-left">
+                            <h1
+                                class="text-white text-4xl md:text-5xl lg:text-7xl font-bold"
+                            >
+                                Welcome to the<br /><span class="text-[#6066dd]"
+                                    >TS</span
+                                >
+                                Forum
+                            </h1>
+                            <p
+                                class="text-white font-semibold my-2 text-sm lg:text-lg"
+                            >
+                                Share your favorite opinion and win and wp
+                                <br />
+                                forum coffee mug!
+                            </p>
+                            <div class="flex">
+                                <input
+                                    placeholder="Search Here Anything"
+                                    class="input rounded-l-full"
+                                    type="text"
+                                />
+                                <button
+                                    class="bg-[#787cf9] text-white btn rounded-r-full"
+                                >
+                                    Search
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="bg-white w-max p-5 rounded-xl">
+                            <span
+                                class="flex justify-between gap-5 font-semibold text-semiblack"
+                            >
+                                <p>Registered Users</p>
+                                <p>01</p>
+                            </span>
+                            <span
+                                class="flex justify-between font-semibold text-semiblack"
+                            >
+                                <p>Forum</p>
+                                <p>05</p>
+                            </span>
+                            <span
+                                class="flex justify-between font-semibold text-semiblack"
+                            >
+                                <p>Topics</p>
+                                <p>01</p>
+                            </span>
+                            <span
+                                class="flex justify-between font-semibold text-semiblack"
+                            >
+                                <p>Replies</p>
+                                <p>01</p>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Banner section end -->
         </section>
         <!-- Header section end -->
     </body>
