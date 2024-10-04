@@ -25,9 +25,9 @@ const displayPost = (posts) => {
         let isActive = post.isActive;
 
         if (isActive === true) {
-            activity = "bg-green-700";
+            activity = "bg-green-400";
         } else {
-            activity = "bg-red-700";
+            activity = "bg-red-400";
         }
 
         let postDiv = document.createElement("div");
@@ -56,7 +56,7 @@ const displayPost = (posts) => {
                     <p class="text-semiblack font-semibold mb-2">
                         ${description}
                     </p>
-                    <div class="flex justify-between">
+                    <div class="flex w-full justify-between">
                         <div
                             class="flex gap-3 font-semibold text-semiblack"
                         >
