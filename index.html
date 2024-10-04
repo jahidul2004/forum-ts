@@ -100,11 +100,13 @@
                             </p>
                             <div class="flex">
                                 <input
+                                    id="post-search"
                                     placeholder="Search Here Anything"
                                     class="input rounded-l-full"
                                     type="text"
                                 />
                                 <button
+                                    id="post-search-btn"
                                     class="bg-[#787cf9] text-white btn rounded-r-full"
                                 >
                                     Search
@@ -385,9 +387,7 @@
         <!-- Modal section added -->
         <dialog id="my_modal_1" class="modal">
             <div class="modal-box">
-                <div id="details-container">
-                    
-                </div>
+                <div id="details-container"></div>
                 <div class="modal-action flex justify-center items-center">
                     <form method="dialog">
                         <!-- if there is a button in form, it will close the modal -->
