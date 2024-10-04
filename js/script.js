@@ -151,3 +151,76 @@ document
         }
         document.getElementById("post-search").value = "";
     });
+
+const loadLatestPost = async () => {
+    let res = await fetch(
+        "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+    );
+    let data = await res.json();
+    console.log(data);
+    displayLatestPost(data);
+};
+
+loadLatestPost();
+
+displayLatestPost = (posts) => {
+    for (post of posts) {
+        let coverImage = post.cover_image;
+        let profileImage = post.profile_image;
+        let title = post.title;
+        let description = post.description;
+        let author = post.author.name;
+
+        let date = post.author.posted_date;
+        if (typeof date !== "string") {
+            date = "Not Published Yet";
+        }
+
+        let designation = post.author.designation;
+
+        let container = document.getElementById("latest-post-container");
+
+        let item = document.createElement("div");
+        item.innerHTML = `
+            
+            <div class="border rounded-xl p-5">
+                <div
+                    class="mb-3 w-full rounded-xl h-[200px] bg-[#f3f3f3]"
+                >
+                    <img class="w-full rounded-xl h-full" src="${coverImage}" alt="" />
+                </div>
+                <div>
+                    <p class="font-semibold text-semiblack">
+                        <i class="fa-regular fa-calendar-plus"></i
+                        ><span> ${date}</span>
+                    </p>
+                    <h1
+                        class="text-lg md:text-xl lg:text-xl font-bold my-2"
+                    >
+                        ${title}
+                    </h1>
+                    <p class="text-semiblack font-semibold">
+                        ${description}
+                    </p>
+                    <div class="flex my-2 gap-3 items-center">
+                        <div
+                            class="bg-[#f3f3f3] w-[50px] h-[50px] rounded-full"
+                        >
+                            <img class="w-full h-full rounded-full" src="${profileImage}" alt="" />
+                        </div>
+                        <div>
+                            <h1 class="font-bold">
+                                ${author}
+                            </h1>
+                            <p class="text-semiblack font-semibold">
+                                ${designation}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+        `;
+        container.appendChild(item);
+    }
+};
