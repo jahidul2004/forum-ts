@@ -240,7 +240,7 @@
                                 <i
                                     class="text-green-700 fa-solid fa-check-double"
                                 ></i>
-                                Mark as read (<span>4</span>)
+                                Mark as read (<span id="read-count">0</span>)
                             </p>
                         </div>
                         <!-- Main read post container start -->
@@ -381,6 +381,24 @@
             </footer>
         </section>
         <!-- Footer section end -->
+
+        <!-- Modal section added -->
+        <dialog id="my_modal_1" class="modal">
+            <div class="modal-box">
+                <div id="details-container">
+                    
+                </div>
+                <div class="modal-action flex justify-center items-center">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn bg-[#6066dd] text-white">
+                            Close
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+        <!-- Modal section added -->
 
         <!-- JS linking -->
         <script src="js/script.js"></script>

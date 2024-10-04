@@ -33,7 +33,8 @@ const displayPost = (posts) => {
         let postDiv = document.createElement("div");
         postDiv.innerHTML = `
             <div
-                class="w-full bg-[#f0f2ff] border flex flex-col md:flex-row lg:flex-row gap-3 p-5 rounded-lg"
+                onclick="postRead('${postTitle}', ${viewCount}, '${postImage}', '${postCategory}', '${author}', '${description}')"
+                class="cursor-pointer w-full bg-[#f0f2ff] border flex flex-col md:flex-row lg:flex-row gap-3 p-5 rounded-lg"
             >
                 <div
                     class="w-[70px] h-[70px] rounded-lg relative"
@@ -92,3 +93,41 @@ const displayPost = (posts) => {
 };
 
 loadPost();
+
+const postRead = (title, view, profilePic, category, author, description) => {
+    let container = document.getElementById("read-post-container");
+
+    let item = document.createElement("div");
+    item.innerHTML = `
+        <div class="flex justify-between items-center p-5 gap-4 bg-white rounded-xl">
+            <h1 class="font-bold">${title}</h1>
+            <span class="font-semibold text-semiblack flex items-center"><i class="fa-regular fa-eye"></i> ${view}views</span>
+        </div>
+    `;
+    container.appendChild(item);
+    document.getElementById("read-count").innerText++;
+
+    my_modal_1.showModal();
+
+    let shodData = document.createElement("div");
+    shodData.innerHTML = `
+        <img
+            class="w-[80px] h-[80px] rounded-full my-3 border-2 border-[#6066dd] m-auto"
+            src="${profilePic}"
+            alt=""
+        />
+        <div class="text-center">
+            <p class="text-semiblack font-semibold">
+                #${category} Author:${author}
+            </p>
+            <h1 class="text-xl font-bold mb-4">
+                ${title}
+            </h1>
+            <p>
+                ${description}
+            </p>
+        </div>
+    `;
+    document.getElementById("details-container").innerHTML = "";
+    document.getElementById("details-container").appendChild(shodData);
+};
