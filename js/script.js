@@ -27,7 +27,7 @@ const displayPost = (posts) => {
         if (isActive === true) {
             activity = "bg-green-400";
         } else {
-            activity = "bg-red-400";
+            activity = "bg-red-500";
         }
 
         let postDiv = document.createElement("div");
@@ -36,14 +36,14 @@ const displayPost = (posts) => {
                 class="w-full bg-[#f0f2ff] border flex flex-col md:flex-row lg:flex-row gap-3 p-5 rounded-lg"
             >
                 <div
-                    class="bg-white w-[70px] h-[70px] rounded-lg relative"
+                    class="w-[70px] h-[70px] rounded-lg relative"
                 >
                     <img class="rounded-lg" src="${postImage}" alt="" />
                     <div
                         class="${activity} m-[2px] absolute right-0 top-0 w-[15px] h-[15px] rounded-full"
                     ></div>
                 </div>
-                <div>
+                <div class="w-full ml-80px">
                     <div
                         class="flex gap-3 text-semiblack font-semibold"
                     >
